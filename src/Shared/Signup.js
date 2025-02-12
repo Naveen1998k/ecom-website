@@ -6,7 +6,7 @@ function Signup(){
         <div className="row justify-content-center">
             <div className="col-4">
                     <div className='text-center'>
-                        <img src={amazon} className='logo-img'></img>
+                        <img src={amazon} className='logo-img' alt='amazon logo'></img>
                     </div>
                     <div className="card">
                         <div className="card-body">
