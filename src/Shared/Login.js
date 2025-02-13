@@ -6,7 +6,7 @@ function Login(){
 
     function handlemodel(){
      
-     if(isModelOpen==false){
+     if(isModelOpen===false){
         setDisplay("modal dis-block")
         isModelOpen=true;
      }else{
