@@ -1,5 +1,5 @@
 export const API_END_POINTS={
-    SINGUP:'',
+    SINGUP:'/api/std/create-acount',
     SINGIN:'',
     FORGOTPASSWORD:''
 }

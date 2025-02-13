@@ -2,8 +2,8 @@ import axios from 'axios'
 import { API_CONFIG } from '../Constants/apis';
 const axiosInstance=axios.create(
     {
-        baseUrl: API_CONFIG.BASE_URL,
-        timeout:API_CONFIG.TIME_OUT //Specify In Millesconds
+        baseURL: API_CONFIG.BASE_URL,
+        timeout:API_CONFIG.TIME_OUT 
     }
 )
 
@@ -17,6 +17,9 @@ axiosInstance.interceptors.request.use((req)=>{
 
 axiosInstance.interceptors.response.use((res)=>
     {
+        if(res.headers[API_CONFIG.AUTHORIZATION] != undefined){
+            localStorage.setItem("token",res.headers[API_CONFIG.AUTHORIZATION])
+        }
     return res;
     },
     error=>{

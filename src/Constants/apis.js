@@ -1,8 +1,8 @@
 export const API_CONFIG={
 
-    BASE_URL:'https://amazon.com',
-    TIME_OUT:15000,
+    BASE_URL:'https://api.softwareschool.co',
+    TIME_OUT:20000,
     TOKEN: 'token',
-    AUTHORIZATION:'Authorization',
+    AUTHORIZATION:'authorization',
     BEARER:'Bearer'
 }
