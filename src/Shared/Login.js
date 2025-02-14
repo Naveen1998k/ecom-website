@@ -84,9 +84,14 @@ function Login(){
                                         <div className='text-danger fs-6'>{loginErrors.password==true && API_ERROR_MSG.LOGIN.PASSWORD } </div>
                                     </div>
                                     
+                                        <div className="ps-5">
+                                            <a href="reset-password">Forgot</a>
+                                        </div>
+                                    
                                     <div className="d-grid mt-3">
                                         <button className="btn btn-warning" type="button" onClick={e=>handleLogin()}>Login</button>
-                                       
+                                        <div className='text-danger fs-6'>{loginErrors.ApiError==true && API_ERROR_MSG.LOGIN.API_ERROR}</div>
+
                                     </div>
         
                                 </div>
