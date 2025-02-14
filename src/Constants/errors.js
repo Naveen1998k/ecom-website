@@ -4,5 +4,10 @@ export const API_ERROR_MSG={
         EMAIL:"Enter Valid Email",
         PASSWORD:"Password Must be 6 Chars"
 
+    },
+    LOGIN:{
+        EMAIL:"Enter Valid Email",
+        PASSWORD:"Password Must Be 6 chars"
+        
     }
 }
