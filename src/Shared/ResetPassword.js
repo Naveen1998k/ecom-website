@@ -43,32 +43,31 @@ function ResetPassword(){
 
     return(
          <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-4">
-                                    <div className='text-center'>
-                                        <img src={amazon} className='logo-img' alt='amazon logo'></img>
-                                    </div>
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <h5 className='text-center'>Reset Passsword</h5>
+             <div className="row justify-content-center">
+                <div className="col-4">
+                     <div className='text-center'>
+                        <img src={amazon} className='logo-img' alt='amazon logo'></img>
+                    </div>
+                        <div className="card">
+                            <div className="card-body">
+                                <h5 className='text-center'>Reset Passsword</h5>
                                             
-                                            <div className='mt-3'>
-                                                <label for="formEmail"><strong>Your Email</strong></label>
-                                                <input className='form-control' type='text' placeholder='Enter Your Email' id='formEmail' onChange={e=>setEmail(e.target.value)} ></input>
-                                                <div className='text-danger fs-6'>{errors.email==true && API_ERROR_MSG.RESET_PASSWORD.EMAIL}</div>
-                                            </div>
-                                            
-                                            
-                                            <div className="d-grid mt-3">
-                                                <button className="btn btn-warning" type="button" onClick={e=>handleResetpassword()}>Reset Password</button>
-                                                <div className='text-success fs-6'> {apiMsg}</div>
-                                                <div className='text-danger fs-6'>{errors.ApiError==true && API_ERROR_MSG.RESET_PASSWORD.API_ERROR}</div>
+                                 <div className='mt-3'>
+                                     <label for="formEmail"><strong>Your Email</strong></label>
+                                        <input className='form-control' type='text' placeholder='Enter Your Email' id='formEmail' onChange={e=>setEmail(e.target.value)} ></input>
+                                        <div className='text-danger fs-6'>{errors.email==true && API_ERROR_MSG.RESET_PASSWORD.EMAIL}</div>
+                                </div>
+
+                                    <div className="d-grid mt-3">
+                                        <button className="btn btn-warning" type="button" onClick={e=>handleResetpassword()}>Reset Password</button>
+                                    <div className='text-success fs-6'> {apiMsg}</div>
+                                         <div className='text-danger fs-6'>{errors.ApiError==true && API_ERROR_MSG.RESET_PASSWORD.API_ERROR}</div>
         
-                                            </div>
-                
-                                        </div>
-                
                                     </div>
+                
+                                </div>
+                
+                             </div>
                 
                             </div>
                 
