@@ -10,3 +10,6 @@ export const SinginAPi=async (data)=>{
 
     return await axiosInstance.post(API_END_POINTS.SINGIN,data);
 }
+export const ResetPasswordAPI= async(data)=>{
+    return await axiosInstance.post(API_END_POINTS.FORGOTPASSWORD,data)
+}

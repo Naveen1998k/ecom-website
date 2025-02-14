@@ -8,6 +8,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Login from './Shared/Login';
 import Signup from './Shared/Signup';
 import Home from './Home';
+import ResetPassword from './Shared/ResetPassword';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
           <Route path="login" Component={Login}></Route>
           <Route path='create-account' Component={Signup}></Route>
           <Route path='/' Component={Home}></Route>
+          <Route path='/reset-password' Component={ResetPassword}></Route>
         </Routes>
       </BrowserRouter>
       
