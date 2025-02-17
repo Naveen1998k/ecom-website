@@ -1,5 +1,6 @@
 export const API_END_POINTS={
     SINGUP:'/api/std/create-acount',
     SINGIN:'/api/std/login',
-    FORGOTPASSWORD:'/api/std/reset-password'
+    FORGOTPASSWORD:'/api/std/reset-password',
+    SEARCH_API:'/api/std/search'
 }
