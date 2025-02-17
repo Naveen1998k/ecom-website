@@ -9,6 +9,7 @@ import Login from './Shared/Login';
 import Signup from './Shared/Signup';
 import Home from './Home';
 import ResetPassword from './Shared/ResetPassword';
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
