@@ -23,6 +23,9 @@ function Navbar(){
                         let suggestionList=searchresponse.data.data;
                        let suggestions= suggestionList.map(suggestion=>{
                             return suggestion.value;
+
+
+                            
                         })
                         console.log(suggestions)
                         setSuggestionForSearch([...suggestions])
