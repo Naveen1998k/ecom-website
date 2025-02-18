@@ -27,3 +27,6 @@
 .suggestion-items:hover{
   background-color: #e5e5e5;
 }
+.amazon-pointer{
+  cursor: pointer;
+}

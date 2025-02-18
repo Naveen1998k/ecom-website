@@ -40,7 +40,9 @@ function Navbar(){
     }
 
     const handleSuggestionClick=(data)=>{
+
         console.log(data)
+        window.location="/product-search?keyword="+data
     }
 
     const logOutUser=()=>{
