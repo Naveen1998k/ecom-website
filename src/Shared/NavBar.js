@@ -101,6 +101,7 @@ function Navbar(){
                             loggeduserId == true &&
                             <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" onClick={e=>logOutUser()} >Logout</Link></li>
+                                <li><Link to="/address" className="dropdown-item"  >Manage Address</Link></li>
                             </ul>
                         }
                     </div> 

@@ -11,3 +11,9 @@ export const checkUserLoggedIn=()=>{
         return true;
     }
 }
+
+export const getUserID=()=>{
+    let userData=localStorage.getItem("userData")
+    userData=JSON.parse(userData);
+    return userData.id;
+}
