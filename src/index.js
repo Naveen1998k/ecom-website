@@ -13,6 +13,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Productdata from './Prdoucts/Search';
 import SingleProduct from './Prdoucts/SingleProduct';
 import Address from './Address/Address';
+import Cart from './Prdoucts/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
           <Route path='/product-search' Component={Productdata}></Route>
           <Route path='/product/:productId' Component={SingleProduct}></Route>
           <Route path='/address' Component={Address}></Route>
+          <Route path='/cart' Component={Cart}></Route>
 
         </Routes>
       </BrowserRouter>
