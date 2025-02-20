@@ -4,13 +4,14 @@ import Navbar from "../Shared/NavBar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {SideBySideMagnifier} from 'react-image-magnifiers'
+import { ToastContainer, toast } from 'react-toastify';
 
 function SingleProduct(){
 
     const{productId}=useParams();
     let [product,setProduct]=useState(null)
     const [mainImage,setMainImage]=useState("");
-
+        let[quntity,setQuntity]=useState(1)
     useEffect(()=>{
 
         const getProduct= async()=>{
@@ -23,12 +24,39 @@ function SingleProduct(){
         getProduct()
     },[])
 
+    const handleAddToCart=async()=>{
+        console.log(quntity,product.stock)
+
+        if(quntity<=product.stock){
+
+           let product={
+            id:productId,quantity:quntity
+           }
+           let Products=[]
+           Products.push(product)
+           
+           try {
+            let res=await axios.post("https://dummyjson.com/carts/add",{
+                userId:1,products:Products
+               })
+
+               toast.success("Add To Cart",{position:"top-center"})
+           } catch (ex) {
+            toast.error(ex.message,{position:"top-left"})
+           }
+            console.log("Call API")
+        }else{
+            toast.error("Stock Is Not Available",{position:"top-center"})
+            console.log("Stock Is Not Available")
+        }
+    }
+
     return(
         <div>
             <Navbar/>
             <div className='container-fluid'>
                 <div className='row mt-4'>
-                    <div className='col-5'>
+                    <div className='col-3 border'>
                         {
                             product !=null &&
                             <div className="row">
@@ -38,7 +66,9 @@ function SingleProduct(){
                                          <img src={image} className="img-thumbnail" onMouseOver={e=>setMainImage(image)}></img>
                                         </div>
                                     ))
-                                }{
+                                } </div>
+                        }
+                                 {
                                     product !=null &&
                                     //<img src={mainImage} className="img-fluid"></img>
                                     <SideBySideMagnifier
@@ -50,18 +80,50 @@ function SingleProduct(){
                                         zoomContainerBoxShadow="0 4px 8px rgba(0,0,0,0.2)"
                                         style={{width: "300px",height:"400px"}}
                                     />
-                                }
-                            
-                               </div>
-
-                            
-                        }
+                                }                   
+                        
                     </div>
-                    <div className='col-4'></div>
-                    <div className='col-3'></div>
+                    <div className='col-4 border'>
+                        {
+                            product !=null && <div>
+                                {
+                                  <div>
+                                     <h1> {product?.title}</h1>
+                                     <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-half"></i> &nbsp;{product?.rating}
+                                     <div>
+                                     <i className="bi bi-currency-rupee"></i> &nbsp;{product?.price}
+                                        </div>
+
+                                    </div>
+
+                                }
+                                </div>
+                        }
+
+                    </div>
+                    <div className='col-3'>
+                        <div className="card">
+                            <div className="card-body">
+                                <h5>Add To Cart</h5>
+                                <select className="form-control mt-3" onChange={e=>setQuntity(e.target.value)}>
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5</option>
+                                </select>
+                                <div className="d-grid gap-2 mt-3">
+                                    <button className="btn btn-warning" type="button" onClick={e=>handleAddToCart()}>Add To Cart</button>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                     
                 </div>
             </div>
+            <ToastContainer />
             <Footer/>
         </div>
     )

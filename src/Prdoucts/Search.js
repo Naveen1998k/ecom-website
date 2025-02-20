@@ -3,6 +3,7 @@ import Footer from './../Shared/Footer';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Product from './Product';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Productdata(){
 
@@ -34,12 +35,13 @@ function Productdata(){
                     <div className='col-6'>
                     {
                         products.map((product,i)=>(
-                            <Product data={product}/>
+                            <Product data={product} key={i}/>
                         ))
                     }
                     </div>
                 </div>
             </div>
+            
             <Footer/>
         </div>
     )

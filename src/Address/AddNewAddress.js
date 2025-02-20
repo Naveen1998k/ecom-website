@@ -22,7 +22,7 @@ function AddNewAddress({closeAddress,addAddress}){
                      alert("permission denied")   
                 }
             )
-           
+            
 
         }else{
             alert("Geolocation Not Supported")
