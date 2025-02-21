@@ -10,7 +10,7 @@ function Footer() {
                     <div className="col-md-3">
                         <h5 className="fw-bold">Quick Links</h5>
                         <ul className="list-unstyled">
-                            <li><a href="/about" className="text-white text-decoration-none">About</a></li>
+                            <li><a href="/" className="text-white text-decoration-none">About</a></li>
                             <li><a href="/contact" className="text-white text-decoration-none">Contact</a></li>
                             <li><a href="/shop" className="text-white text-decoration-none">Shop</a></li>
                             <li><a href="/faq" className="text-white text-decoration-none">FAQ</a></li>
@@ -27,10 +27,10 @@ function Footer() {
                     <div className="col-md-3">
                         <h5 className="fw-bold">Follow Us</h5>
                         <div className="d-flex gap-2">
-                            <a href="#" className="text-white"><i className="bi bi-facebook"></i></a>
-                            <a href="#" className="text-white"><i className="bi bi-twitter"></i></a>
-                            <a href="#" className="text-white"><i className="bi bi-instagram"></i></a>
-                            <a href="#" className="text-white"><i className="bi bi-linkedin"></i></a>
+                            <a href="/" className="text-white"><i className="bi bi-facebook"></i></a>
+                            <a href="/" className="text-white"><i className="bi bi-twitter"></i></a>
+                            <a href="/" className="text-white"><i className="bi bi-instagram"></i></a>
+                            <a href="/" className="text-white"><i className="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>

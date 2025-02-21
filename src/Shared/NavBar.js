@@ -53,7 +53,7 @@ function Navbar() {
                         <li><hr className="dropdown-divider" /></li>
                         <li><a className="dropdown-item" href="#">Separated link</a></li>
                     </ul>
-                    <input type="text" className="form-control rounded-start-pill" placeholder="Search products..." onChange={handleSearch} />
+                    <input type="text" className="form-control rounded-start-pill" placeholder="Search products..." onChange={e=>handleSearch(e)} />
                     <button className="btn btn-outline-light rounded-end-pill" type="button"><i className="bi bi-search"></i></button>
 
                     {showDropDown && (
