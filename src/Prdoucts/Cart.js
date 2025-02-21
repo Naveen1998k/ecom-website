@@ -15,7 +15,7 @@ function Cart() {
                 let userId = 6;
                 let res = await axios.get(`https://dummyjson.com/carts/user/${userId}`);
                 setCartData([...res.data.carts]);
-                toast.success("Cart items fetched", { position: "top-center" });
+               // toast.success("Cart items fetched", { position: "top-center" });
             } catch (ex) {
                 toast.error(ex.message, { position: "top-left" });
             }
@@ -84,6 +84,10 @@ function Cart() {
       }
      
     }
+
+    const deleteProductFromCart=(product)=>{
+      toast.success("product deleted from Cart",{position:"top-center"})
+    }
     return (
         <div>
             <Navbar />
@@ -110,12 +114,13 @@ function Cart() {
                                                             <button className='btn btn-outline-secondary btn-sm ms-2' onClick={() => increaseQuantity(product, j, cart, i)}>+</button>
                                                         </div>
                                                         <div className='mt-2'>
-                                                            <a href='#!' className='text-danger me-3'>Delete</a>
+                                                            <a href='#!' className='text-danger me-3' onClick={e=>deleteProductFromCart(product)}>Delete</a>
                                                             <a href='#!' className='text-primary'>Save for Later</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className='col-2 text-end'>
+                                               <div> <span className="badge rounded-pill text-bg-danger">Limited Deals</span></div>
                                                   <strong><i className="bi bi-currency-rupee"></i>{product.price}</strong>
 
                                                   </div>
