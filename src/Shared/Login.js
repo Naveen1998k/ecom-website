@@ -3,7 +3,7 @@ import amazon from '../Images/amazon.png';
 import { checkUserLoggedIn, isEmailValid } from "../Utils/Utils";
 import { SinginAPi } from "../Services/AuthService";
 import { API_ERROR_MSG } from "../Constants/errors";
-
+import { Link } from 'react-router-dom';
 
 function Login(){
 
@@ -92,6 +92,9 @@ function Login(){
                                         <button className="btn btn-warning" type="button" onClick={e=>handleLogin()}>Login</button>
                                         <div className='text-danger fs-6'>{loginErrors.ApiError==true && API_ERROR_MSG.LOGIN.API_ERROR}</div>
 
+                                    </div>
+                                    <div className="ps-5">
+                                            <Link to="/create-account">Signup</Link>
                                     </div>
         
                                 </div>

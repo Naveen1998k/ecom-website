@@ -20,8 +20,8 @@ root.render(
   <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path="login" Component={Login}></Route>
-          <Route path='create-account' Component={Signup}></Route>
+          <Route path="/login" Component={Login}></Route>
+          <Route path='/create-account' Component={Signup}></Route>
           <Route path='/' Component={Home}></Route>
           <Route path='/reset-password' Component={ResetPassword}></Route>
           <Route path='/product-search' Component={Productdata}></Route>

@@ -5,13 +5,18 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {SideBySideMagnifier} from 'react-image-magnifiers'
 import { ToastContainer, toast } from 'react-toastify';
+import { checkUserLoggedIn } from "../Utils/Utils";
 
 function SingleProduct(){
+
+
+   
 
     const{productId}=useParams();
     let [product,setProduct]=useState(null)
     const [mainImage,setMainImage]=useState("");
-        let[quntity,setQuntity]=useState(1)
+     let[quntity,setQuntity]=useState(1)
+
     useEffect(()=>{
 
         const getProduct= async()=>{
@@ -26,6 +31,11 @@ function SingleProduct(){
 
     const handleAddToCart=async()=>{
         console.log(quntity,product.stock)
+
+        let userData=checkUserLoggedIn();
+        if(userData==false){
+            window.location="/login"
+        }
 
         if(quntity<=product.stock){
 
